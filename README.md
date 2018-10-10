@@ -4,4 +4,6 @@ A weboldalam fő "motorja". Ez a dev frissítési csatorna, azaz lehet, hogy oly
 CSS, HTML, PHP és JavaScript. A PHP adatbáziskezeléshez kell.
 
 TODO LIST:
-Először is be kellene fejezni a cuccot, és feltölteni. :)
+
+Implementálni egy Control Panelt
+Implementálni adatbázist
