@@ -5,5 +5,5 @@ CSS, HTML, PHP és JavaScript. A PHP adatbáziskezeléshez kell.
 
 TODO LIST:
 
-Implementálni egy Control Panelt
-Implementálni adatbázist
+*Implementálni egy Control Panelt
+*Implementálni adatbázist
