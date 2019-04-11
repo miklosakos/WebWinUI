@@ -5,7 +5,7 @@ $dbpw="";
 $db="webos";
 */$ver="1.0";
 $lang="hu";
-$builddate="2018-10-09";$channel="dev";
+$builddate="2019-03-28";$channel="dev";
 /*$conn=mysqli_connect($localhost,$dbusr,$dbpw,$db);
 if($conn){
 }else{
