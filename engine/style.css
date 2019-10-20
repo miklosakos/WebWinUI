@@ -1,4 +1,57 @@
 * { font-face: vgasys }
+.fwin-container
+{
+    z-index: 9;
+    background-color: #FFFFFF;
+    border: 4px solid gray;
+	resize:both;
+	margin: auto auto;
+}
+
+.fwin-header
+{
+    padding: 5px;
+    cursor: move;
+    z-index: 5;
+    background-color: black;
+    color: #FFFFFF;
+	text-align:center;
+}
+
+.fwin-closeaa
+{
+	background-color: #6688bb;
+	cursor: default;
+	color: #ffffff;
+	border: 0px;
+}
+.fwin-close{
+	background-color:darkgray;
+	border:1px solid gray;
+	text-align:center;
+	display:block;
+	position:absolute;
+	left:0;
+	top:0;
+	margin:0;
+	padding:0;
+	height:26px;
+	width:5%;
+	text-shadow: 1px black;
+}
+
+.fwin-title
+{
+    cursor: move;
+    background-color: black;
+    color: #FFFFFF;
+	text-align:center;
+}
+
+.fwin-content
+{
+	margin: auto auto;
+}
 #progman {
     position: absolute;
     z-index: 9;
@@ -101,7 +154,9 @@ body{
 	text-align:center;
 	display:block;	position:absolute;	left:0;	top:0;	margin:0;	padding:0;	height:26px;	width:5%;
 	text-shadow: 1px black;
-}#logo{	position:absolute;	left:0;}#main{	position:absolute;	right:20%;}#about1{	position:absolute;	top: 150px;}#about2{	position:absolute;	top: 190px;}#about3{	position:absolute;	top:230px;}#ok{	position:absolute;	right:5%;	top: 20%;	width:60px;	background-color:darkgray;	border:2px solid black;}
+}#logo{	position:absolute;	left:0;
+	padding-right:10px;}#main{	position:absolute;
+	right:60;}#about1{	position:absolute;	top: 150px;}#about2{	position:absolute;	top: 190px;}#about3{	position:absolute;	top:230px;}#ok{	position:absolute;	right:5%;	top: 20%;	width:60px;	background-color:darkgray;	border:2px solid black;}
 #changelogbtn{
 	background-color:red;
 }

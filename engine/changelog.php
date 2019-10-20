@@ -1,5 +1,5 @@
 <?php
-	include_once('./engine/config.php');
+	include_once('./config.php');
 	$changelog="unset";
 	$reader="";
 	switch($channel)
@@ -27,3 +27,4 @@
 		default: echo 'Figyelem! Helytelen konfiguráció! Frissítési csatorna ismeretlen! Kérlek, ellenőrizd a config.php fájl helyességét!'; break;
 	}
 ?>
+<a href="../">Vissza</a>
