@@ -1,4 +1,4 @@
-var progman = {id:"prgman",visibleHeader:true,title:"Programkezelő",content:"<div id='progmanmenu'><button onclick='fwin_show(\x22abt\x22)' class='dropbtn'>Névjegy</button> <button class='dropbtn' onclick='window.location.href = \x22./engine/changelog.php\x22' class='dropbtn2' id='changelogbtn'>Változások listája</button></div><a class='link' id='yt' href='https://www.youtube.com/channel/UCXGXHJug86ym9ik0iPiycrQ'></a> <a class='link' id='ig' href='https://instagram.com/miklos.akos99'></a> <a class='link' id='github' href=\x22https://github.com/miklosakos/WebWinUI/tree/"+channel+"\x22></a> <a class='link' id='twitter' href='https://twitter.com/miklos_akos'></a>",callback:"fwin_show(\x22prgman\x22)",width:300,height:200};
+var progman = {id:"prgman",visibleHeader:true,title:"Programkezelő",content:"<div id='progmanmenu'><button onclick='fwin_show(\x22abt\x22)' class='dropbtn'>Névjegy</button> <button class='dropbtn' onclick='set_fwin_content_by_url(\x22chglog\x22, \x22https://raw.githubusercontent.com/miklosakos/WebWinUI/"+channel+"/change.log\x22, true);' class='dropbtn2' id='changelogbtn'>Változások listája</button></div><a class='link' id='yt' href='https://www.youtube.com/channel/UCXGXHJug86ym9ik0iPiycrQ'></a> <a class='link' id='ig' href='https://instagram.com/miklos.akos99'></a> <a class='link' id='github' href=\x22https://github.com/miklosakos/WebWinUI/tree/"+channel+"\x22></a> <a class='link' id='twitter' href='https://twitter.com/miklos_akos'></a>",callback:"fwin_show(\x22prgman\x22)",width:300,height:200};
 var about = {id:"abt",visibleHeader:true,title:"Névjegy",content:"<img id=\x22logo\x22 src=\x22./img/logo.png\x22/><p id=\x22main\x22>WebWinUI<br/>Verzió: " + ver +" (" + builddate + "), " + channel + " csatorna.<br/>Copyright &copy; 2018-2019 miklos_akos</p><p id=\x22about1\x22>A WebWinUI megpróbálja újraörökíteni a régi Windows 3-as felületet, valamint a weboldalam alapja. </p><p id=\x22about2\x22>Ha szeretnéd te is használni ezt az oldaladon, akkor kattints a GitHub linkre a programkezelőben.</p><p id=\x22about3\x22>Figyelem! Az itt felhasznált szellemi anyagok azon tulajdonosaik szellemi tulajdonát képezik!</p>",width:500,height:300,closebtn:true,overlay:true}
 var changelog = {id:"chglog",visibleHeader:true,title:"Változások listája",content:"<?php include('./engine/changelog.php');?>",width:500,height:300,closebtn:true,overlay:true}
 function new_fwin(data)
@@ -144,7 +144,35 @@ function overlay_check()
 		overlay.style.visibility = 'hidden';
 	}
 }
-
+function fwin_set_content(id, content)
+{
+	var fwin = document.getElementById(id);
+	if (fwin != undefined)
+	{
+		var sects = fwin.getElementsByClassName('fwin-content');
+		if ((sects != undefined) && (sects.length != undefined) && (sects.length > 0))
+		{
+			sects[0].innerHTML = content;
+			return true;
+		}
+	}
+	return false;
+}
+function set_fwin_content_by_url(id, url, show)
+{
+	_ajax_get
+	(
+		url,
+		function (r)
+		{
+			fwin_set_content(id, r);
+			if (show === true)
+			{
+				fwin_show(id);
+			}
+		}
+	);
+}
 var overlay = null;
 
 new_fwin(progman);
